@@ -8,8 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.repository == 'nielskorporaal/antora-ui-bundle' &&
-      !startsWith(github.event.head_commit.message, 'Release ') &&
-      !endsWith(github.event.head_commit.message, ' [skip ci]')
+      startsWith(github.event.head_commit.message, 'Release ')
     steps:
     - run: echo ok go
   build:
